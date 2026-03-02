@@ -1,0 +1,6 @@
+# Start development server
+# Using bin/dev instead of the standard bin/rails server is crucial here. 
+# Because you chose esbuild and tailwind, bin/dev uses the Foreman gem to start 
+# your Rails server alongside the background processes that actively watch and 
+# compile your JavaScript and CSS (http://localhost:3000)
+bin/dev
