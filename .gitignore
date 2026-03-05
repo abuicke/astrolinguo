@@ -30,9 +30,10 @@
 
 /public/assets
 
-# Ignore key files for decrypting credentials and more.
+# Ignore keys and access tokens
 /config/*.key
 *.pem
+secrets
 
 
 /app/assets/builds/*
