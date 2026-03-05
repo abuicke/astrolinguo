@@ -87,9 +87,13 @@ test:
 production:
   primary: &primary_production
     <<: *default
+    adapter: postgresql
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    host: <%= ENV["DATABASE_HOST"] %> # This will be your RDS Endpoint
+    username: <%= ENV["DATABASE_USERNAME"] %>
+    password: <%= ENV["DATABASE_PASSWORD"] %>
     database: astrolinguo_production
-    username: astrolinguo
-    password: <%= ENV["ASTROLINGUO_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: astrolinguo_production_cache
